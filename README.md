@@ -63,6 +63,7 @@ The dataset is sourced from the Kaggle Titanic competition.
 * Pandas, NumPy
 * Scikit-learn
 * Matplotlib / Seaborn
+* TensorFlow
 
 ---
 
