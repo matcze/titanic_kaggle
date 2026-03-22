@@ -1,6 +1,6 @@
 ## 🚢 Titanic Survival Prediction (Kaggle Project)
 
-This project focuses on predicting whether a passenger survived the Sinking of the RMS Titanic using machine learning techniques. It is formulated as a **binary classification problem**, where the target variable indicates survival (1) or non-survival (0).
+This project focuses on predicting whether a passenger survived the sinking of the **RMS Titanic** using machine learning techniques. It is formulated as a **binary classification problem**, where the target variable indicates survival (`1`) or non-survival (`0`).
 
 ---
 
@@ -9,7 +9,7 @@ This project focuses on predicting whether a passenger survived the Sinking of t
 The analysis follows a complete machine learning pipeline:
 
 * **Exploratory Data Analysis (EDA)**
-  Understanding feature distributions, relationships, and patterns in the data.
+  Understanding feature distributions, relationships, and patterns in the dataset.
 
 * **Data Preprocessing**
   Handling missing values, encoding categorical variables, and preparing the dataset for modeling.
@@ -27,7 +27,7 @@ The analysis follows a complete machine learning pipeline:
 
 ## 📁 Dataset
 
-The dataset is sourced from the Kaggle Titanic competition.
+The dataset is sourced from the [Kaggle Titanic competition](https://www.kaggle.com/c/titanic).
 
 ### Training Set
 
@@ -47,13 +47,115 @@ The dataset is sourced from the Kaggle Titanic competition.
 ## 🧹 Data Preprocessing
 
 * **Duplicates**
-
-  * No duplicate records were found.
+  No duplicate records were found.
 
 * **Missing Values**
 
-  * Certain features contain missing values (e.g., Age, Cabin, Embarked).
-  * Missing data is handled using appropriate strategies such as imputation or removal.
+  **Training set**:
+
+  * `Age` – filled with median
+  * `Cabin` – dropped due to a large number of missing values
+  * `Embarked` – filled with mode
+
+  **Test set**:
+
+  * `Age` – filled with median
+  * `Fare` – filled with median
+  * `Cabin` – dropped
+
+* **Irrelevant Columns**
+
+  * `Ticket` was dropped due to high diversity and limited predictive value.
+
+* **Other Preprocessing**
+
+  * After analysis, additional preprocessing like handling outliers or correcting data types was not required.
+
+---
+
+## 🔧 Feature Engineering
+
+* **Binary Encoding**
+
+  * `Sex` column was binary encoded as Male: `1`, Female: `0`.
+
+* **One-Hot Encoding**
+
+  * `Embarked` has three categories: S, Q, C; one-hot encoding was applied.
+
+* **New Features**
+
+  * Extracted titles from the `Name` column as a new feature.
+  * Created `FamilySize` and `IsAlone` by combining `SibSp` and `Parch`.
+
+* **Feature Transformation**
+
+  * `Age` was binned into five categories.
+  * `Fare` was scaled using `StandardScaler` from `sklearn`.
+
+---
+
+## 🧪 Train/Validation Split
+
+The training dataset was split into **training** and **validation** sets in an 80:20 ratio to evaluate model performance. The test set was used for final predictions.
+
+---
+
+## 🤖 Models Used
+
+The following models were applied for binary classification:
+
+* Logistic Regression
+* K-Nearest Neighbors (KNN)
+* Naive Bayes
+* Decision Tree
+* Random Forest Classifier
+* Support Vector Machine (SVC)
+* Gradient Boosting Classifier
+* XGBoost Classifier
+* Neural Network implemented with **TensorFlow**
+
+---
+
+## 🏆 Skills Demonstrated
+
+This project showcases practical machine learning workflow:
+
+* Data Analysis (EDA)
+* Data Preprocessing
+* Feature Engineering
+* Classification Modeling
+* Model Evaluation
+* Neural Networks with **TensorFlow**
+
+---
+
+## 📈 Results
+
+1. **Basic preprocessing & feature engineering**
+
+   * Handling missing values, one-hot encoding
+   * Models: Logistic Regression, KNN, Naive Bayes, Decision Tree
+   * Accuracy: **0.72**
+
+2. **Scaling and Neural Network**
+
+   * Scaling `Fare` and adding a Neural Network
+   * Accuracy: **0.72**
+
+3. **Adding new features**
+
+   * Features: `Title`, `IsAlone`, `FamilySize`
+   * Accuracy: **0.75**
+
+4. **Advanced models**
+
+   * Models: Random Forest, Gradient Boosting, XGBoost
+   * Accuracy: **0.77**
+
+5. **Feature transformation (Age bins)**
+
+   * Accuracy: **0.76**
 
 ---
 
@@ -62,18 +164,16 @@ The dataset is sourced from the Kaggle Titanic competition.
 * Python
 * Pandas, NumPy
 * Scikit-learn
-* Matplotlib / Seaborn
+* Matplotlib, Seaborn
 * TensorFlow
-
----
-
-## 🎯 Objective
-
-The goal of this project is to build a predictive model that accurately classifies passengers based on their likelihood of survival, while gaining insights into the factors that influenced survival outcomes.
+* XGBoost
+* Jupyter Notebook
 
 ---
 
 ## 📌 Notes
 
-* This project is part of the popular beginner competition on Kaggle.
-* It demonstrates end-to-end machine learning workflow and best practices.
+* This project is part of a popular beginner competition on Kaggle.
+* It demonstrates an **end-to-end machine learning workflow** and best practices.
+
+---
