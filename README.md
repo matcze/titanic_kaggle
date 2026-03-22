@@ -6,22 +6,23 @@ This project focuses on predicting whether a passenger survived the sinking of t
 
 ## 📊 Project Workflow
 
-The analysis follows a complete machine learning pipeline:
+The analysis follows a complete **machine learning workflow**:
 
 * **Exploratory Data Analysis (EDA)**
-  Understanding feature distributions, relationships, and patterns in the dataset.
+  Analyze feature distributions, relationships, and patterns in the dataset.
 
 * **Data Preprocessing**
-  Handling missing values, encoding categorical variables, and preparing the dataset for modeling.
+  Handle missing values and prepare the dataset for modeling.
 
 * **Feature Engineering**
-  Creating new features and transforming existing ones to improve model performance.
+  Encode categorical variables, create new features, and transform existing ones to improve model performance.
 
 * **Model Training and Evaluation**
-  Training multiple models and evaluating them using appropriate metrics.
+  Train multiple models and evaluate them using appropriate performance metrics.
 
 * **Model Comparison**
-  Comparing different machine learning algorithms to select the best-performing model.
+  Compare different machine learning algorithms to identify the best-performing model.
+
 
 ---
 
@@ -155,7 +156,7 @@ This project showcases practical machine learning workflow:
 
 5. **Feature transformation (Age bins)**
 
-   * Accuracy: **0.76**
+   * Accuracy: **0.77**
 
 ---
 
